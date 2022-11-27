@@ -23,7 +23,7 @@ export const CocktailProvider = ({ children }) => {
     let cocktailsList = new Array(cocktailCount);
     for (let i = 0; i < cocktailCount; i++) {
       const response = await fetch(
-        "https:/www.thecocktaildb.com/api/json/v1/1/random.php"
+        "https://www.thecocktaildb.com/api/json/v1/1/random.php"
       );
       const data = await response.json();
       cocktailsList[i] = data.drinks[0];
