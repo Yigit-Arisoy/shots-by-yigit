@@ -20,8 +20,8 @@ function Cocktail() {
     return <Spinner className="spinner mx-auto text-6xl text-primary mt-16" />;
 
   return (
-    <div className="ml-16 mt-16 grid grid-cols-1 md:grid-cols-5 md:justify-items-start">
-      <div className="w-64">
+    <div className="mx-auto sm:ml-16 mt-16 grid grid-cols-1 sm:grid-cols-5 justify-items-center sm:justify-items-start">
+      <div className="">
         <img
           src={cocktail.strDrinkThumb}
           alt=""
@@ -31,8 +31,10 @@ function Cocktail() {
         <IngredientBadges item={cocktail}></IngredientBadges>
       </div>
 
-      <div className="col-span-3 text-left">
-        <h1 className="text-primary text-4xl mb-4">{cocktail.strDrink}</h1>
+      <div className="col-span-3 text-left mx-4">
+        <h1 className="text-primary text-4xl mb-4 text-center sm:text-left">
+          {cocktail.strDrink}
+        </h1>
         <p className="">{cocktail.strInstructions}</p>
 
         <div className="mt-8">
