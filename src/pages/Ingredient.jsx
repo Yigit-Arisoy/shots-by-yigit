@@ -21,23 +21,23 @@ function Ingredient() {
 
   return (
     <div>
-      <div className="mt-16 text-center mx-auto md:text-left md:ml-16 mr-60 card shadow shadow-primary px-4 pb-4 pt-4">
+      <div className="mt-16 text-center mx-auto md:text-left mx-2 sm:ml-16 sm:mr-60 card shadow shadow-primary px-4 pb-4 pt-4">
         <p className="text-primary text-4xl mb-8 ">
           {Ingredient.strIngredient}
         </p>
 
-        <div className="flex gap-8 mb-8">
-          <p className="text-secondary text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
+        <div className="flex gap-2 sm:gap-8 mb-8">
+          <p className="text-secondary text-md sm:text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
             Type: <span className="text-primary">{Ingredient.strType}</span>
           </p>
 
-          <p className="text-secondary text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
+          <p className="text-secondary text-md sm:text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
             Contains Alcohol:{" "}
             <span className="text-primary">{Ingredient.strAlcohol}</span>
           </p>
 
           {Ingredient.strAlcohol == "Yes" ? (
-            <div className="text-secondary text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
+            <div className="text-secondary text-md sm:text-xl  shadow shadow-primary rounded-xl px-4 pb-1 pt-1">
               Alcohol by Volume:{" "}
               <span className="text-primary">{Ingredient.strABV}%</span>
             </div>
@@ -46,10 +46,12 @@ function Ingredient() {
           )}
         </div>
 
-        <p className="text-primary-focus">{Ingredient.strDescription}</p>
+        <p className="text-primary-focus text-left">
+          {Ingredient.strDescription}
+        </p>
       </div>
 
-      <div className="mt-16 text-center mx-auto md:text-left md:ml-16 mr-60 px-4 pb-4 pt-4">
+      <div className="mt-16 text-center mx-auto md:text-left sm:ml-16 sm:mr-60 px-4 pb-4 pt-4">
         {" "}
         <p className="text-secondary text-3xl mb-8 underline">
           Recipes Featuring{" "}

@@ -18,7 +18,7 @@ function MobileNavbar() {
     <div className={navActive ? "block z-50 absolute top-0" : "hidden"}>
       <div className="w-screen h-screen bg-black opacity-80">
         <button onClick={handleNavClose}>
-          <IoIosCloseCircleOutline className="text-primary-focus text-3xl absolute top-5 right-8"></IoIosCloseCircleOutline>
+          <IoIosCloseCircleOutline className="text-primary-focus text-3xl absolute top-5 right-6"></IoIosCloseCircleOutline>
         </button>
         <div className="grid grid-rows-4 gap-6 h-6/12 justify-center mt-32">
           <Link
