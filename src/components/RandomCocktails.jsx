@@ -22,7 +22,7 @@ function RandomCocktails() {
         <h3 className="text-primary-focus text-2xl underline mt-16">
           Some Random Recipes to Get You Started
         </h3>
-        <CocktailList cocktails={cocktails} />;
+        <CocktailList cocktails={cocktails} />
       </div>
     );
 }

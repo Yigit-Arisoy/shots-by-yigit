@@ -7,7 +7,7 @@ let handleSubmit = (e) => {
 
 function Home() {
   return (
-    <div className="text-center mx-2 sm:mx-0">
+    <div className="text-center mx-0 sm:mx-0">
       <div className="title mt-32 mx-4 sm:mx-0">
         <span className="text-primary-focus  text-2xl sm:text-4xl">
           Looking for your next{" "}
@@ -27,7 +27,7 @@ function Home() {
         <input
           type="text"
           placeholder="Search Cocktails"
-          class="input input-bordered input-primary focus:outline-none rounded-xl mx-1 sm:mx-2"
+          class="input input-bordered input-primary focus:outline-none rounded-xl mx-1 w-48 sm:mx-2"
         />
 
         <button class="btn btn-outline rounded-xl text-primary relative">
