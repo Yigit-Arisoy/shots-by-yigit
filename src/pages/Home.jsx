@@ -16,7 +16,7 @@ function Home() {
         </span>
 
         <p className=" text-2xl mt-8">
-          Browse through thousands of our cocktail recipes.
+          Browse through thousands of cocktail recipes.
         </p>
       </div>
       <form

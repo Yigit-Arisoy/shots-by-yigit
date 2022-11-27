@@ -10,12 +10,17 @@ export const CocktailProvider = ({ children }) => {
     cocktails: [],
     Ingredient: "",
     cocktail: "",
+    navActive: false,
   };
 
   const [state, dispatch] = useReducer(cocktailReducer, initialStates);
 
   const setLoading = () => {
     dispatch({ type: "SET_LOADING" });
+  };
+
+  const setNavActive = (value) => {
+    dispatch({ type: "SET_NAV", payload: value });
   };
 
   const fetchRandomCocktail = async () => {
@@ -90,6 +95,19 @@ export const CocktailProvider = ({ children }) => {
     });
   };
 
+  const changeMode = () => {
+    if (document.documentElement.getAttribute("data-theme") == "night") {
+      document.documentElement.setAttribute("data-theme", "cupcake");
+    } else {
+      document.documentElement.setAttribute("data-theme", "night");
+    }
+
+    dispatch({
+      type: "CHANGE_MODE",
+      payload: document.documentElement.getAttribute("data-theme"),
+    });
+  };
+
   return (
     <CocktailContext.Provider
       value={{
@@ -97,10 +115,13 @@ export const CocktailProvider = ({ children }) => {
         cocktails: state.cocktails,
         Ingredient: state.Ingredient,
         cocktail: state.cocktail,
+        navActive: state.navActive,
         fetchRandomCocktail,
         IngredientFetcher,
         fetchByIngredient,
         fetchByName,
+        changeMode,
+        setNavActive,
       }}
     >
       {children}

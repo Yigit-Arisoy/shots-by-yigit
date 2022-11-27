@@ -12,6 +12,9 @@ const cocktailReducer = (state, action) => {
     case "GET_INGREDIENT":
       return { ...state, Ingredient: action.payload, loading: false };
 
+    case "SET_NAV":
+      return { ...state, navActive: action.payload };
+
     default:
       return state;
   }

@@ -52,7 +52,7 @@ function Ingredient() {
       <div className="mt-16 text-center mx-auto md:text-left md:ml-16 mr-60 px-4 pb-4 pt-4">
         {" "}
         <p className="text-secondary text-3xl mb-8 underline">
-          Some Recipes Featuring{" "}
+          Recipes Featuring{" "}
           <span className="text-primary">{Ingredient.strIngredient}</span>
         </p>
         <CocktailList cocktails={cocktails}></CocktailList>

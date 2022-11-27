@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Ingredient from "./pages/Ingredient";
 import Cocktail from "./pages/Cocktail";
+import { useContext } from "react";
+import CocktailContext from "./context/CocktailContext";
 
 function App() {
   return (
