@@ -21,11 +21,11 @@ function Cocktail() {
 
   return (
     <div className="mx-auto sm:ml-16 mt-16 grid grid-cols-1 sm:grid-cols-5 justify-items-center sm:justify-items-start">
-      <div className="">
+      <div className="mx-4 sm:mx-0">
         <img
           src={cocktail.strDrinkThumb}
           alt=""
-          className="card w-60 mt-2 shadow-md shadow-black"
+          className="card w-60 mt-2 shadow-md shadow-black mx-auto sm:mx-0"
         />
 
         <IngredientBadges item={cocktail}></IngredientBadges>

@@ -27,7 +27,7 @@ function Home() {
         <input
           type="text"
           placeholder="Search Cocktails"
-          class="input input-bordered input-primary focus:outline-none rounded-xl mx-1 w-48 sm:mx-2"
+          class="input input-bordered input-primary focus:outline-none rounded-xl mx-1 w-48 sm:w-64 sm:mx-2"
         />
 
         <button class="btn btn-outline rounded-xl text-primary relative">
