@@ -6,6 +6,9 @@ const cocktailReducer = (state, action) => {
     case "SET_COCKTAILS":
       return { ...state, cocktails: action.payload, loading: false };
 
+    case "SET_COCKTAIL":
+      return { ...state, cocktail: action.payload, loading: false };
+
     case "GET_INGREDIENT":
       return { ...state, Ingredient: action.payload, loading: false };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Cocktail from "./Cocktail";
+import Cocktail from "./CocktailItem";
 import { useContext } from "react";
 import CocktailContext from "../context/CocktailContext";
 import { ImSpinner10 as Spinner } from "react-icons/im";

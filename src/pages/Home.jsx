@@ -15,7 +15,7 @@ function Home() {
           <span className="text-primary">?</span>{" "}
         </span>
 
-        <p className="text-primary-focus text-2xl mt-8">
+        <p className=" text-2xl mt-8">
           Browse through thousands of our cocktail recipes.
         </p>
       </div>

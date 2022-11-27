@@ -9,6 +9,7 @@ export const CocktailProvider = ({ children }) => {
     loading: false,
     cocktails: [],
     Ingredient: "",
+    cocktail: "",
   };
 
   const [state, dispatch] = useReducer(cocktailReducer, initialStates);
@@ -41,12 +42,23 @@ export const CocktailProvider = ({ children }) => {
     const response = await fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007${id}`
     );
-
     const data = await response.json();
 
-    console.log(data.drinks[0]);
-
     return data.drinks[0];
+  };
+
+  const fetchByName = async (name) => {
+    setLoading();
+
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
+    );
+    const data = await response.json();
+
+    dispatch({
+      type: "SET_COCKTAIL",
+      payload: data.drinks[0],
+    });
   };
 
   const IngredientFetcher = async (ing) => {
@@ -84,9 +96,11 @@ export const CocktailProvider = ({ children }) => {
         loading: state.loading,
         cocktails: state.cocktails,
         Ingredient: state.Ingredient,
+        cocktail: state.cocktail,
         fetchRandomCocktail,
         IngredientFetcher,
         fetchByIngredient,
+        fetchByName,
       }}
     >
       {children}
