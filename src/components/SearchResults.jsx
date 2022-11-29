@@ -13,7 +13,7 @@ function SearchResults({ cocktails }) {
   } else if (cocktails.length != 0) {
     return (
       <div>
-        <p className="mt-16 text-neutral-content text-2xl mx-32 text-left ">
+        <p className="mt-16 text-neutral-content text-2xl mx-1 sm:mx-32 text-left ">
           We have found{" "}
           <span className="text-primary">{cocktails.length} </span> matches for
           your search:
