@@ -8,6 +8,7 @@ export const CocktailProvider = ({ children }) => {
   const initialStates = {
     loading: false,
     cocktails: [],
+    randomCocktails: [],
     Ingredient: "",
     cocktail: "",
     navActive: false,
@@ -17,6 +18,10 @@ export const CocktailProvider = ({ children }) => {
 
   const setLoading = () => {
     dispatch({ type: "SET_LOADING" });
+  };
+
+  const setCocktail = (cocktail) => {
+    dispatch({ type: "SET_COCKTAIL", payload: cocktail });
   };
 
   const setNavActive = (value) => {
@@ -36,7 +41,7 @@ export const CocktailProvider = ({ children }) => {
     }
 
     dispatch({
-      type: "SET_COCKTAILS",
+      type: "SET_RANDOM_COCKTAILS",
       payload: cocktailsList,
     });
   };
@@ -61,8 +66,8 @@ export const CocktailProvider = ({ children }) => {
     const data = await response.json();
 
     dispatch({
-      type: "SET_COCKTAIL",
-      payload: data.drinks[0],
+      type: "SET_COCKTAILS",
+      payload: data.drinks,
     });
   };
 
@@ -115,6 +120,7 @@ export const CocktailProvider = ({ children }) => {
         cocktails: state.cocktails,
         Ingredient: state.Ingredient,
         cocktail: state.cocktail,
+        randomCocktails: state.randomCocktails,
         navActive: state.navActive,
         fetchRandomCocktail,
         IngredientFetcher,
@@ -122,6 +128,7 @@ export const CocktailProvider = ({ children }) => {
         fetchByName,
         changeMode,
         setNavActive,
+        setCocktail,
       }}
     >
       {children}

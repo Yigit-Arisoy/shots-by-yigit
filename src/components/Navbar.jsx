@@ -6,6 +6,8 @@ import { useContext } from "react";
 import CocktailContext from "../context/CocktailContext";
 import { FiMenu } from "react-icons/fi";
 
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+
 function Navbar() {
   const { changeMode, navActive, setNavActive } = useContext(CocktailContext);
   const handleTheme = (e) => {
@@ -38,9 +40,21 @@ function Navbar() {
         <div className="hidden sm:flex sm:items-center">
           <div className="text-primary text-xl mx-2">Home</div>
           <div className="text-primary text-xl mx-2">Random Cocktail</div>
-          <button className="text-primary text-xl mx-2" onClick={handleTheme}>
-            btn
-          </button>
+          <label class="swap swap-rotate">
+            <input type="checkbox" onChange={handleTheme} />
+
+            <MdDarkMode
+              class="swap-off fill-current text-3xl "
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ color: "#09A8EC" }}
+            ></MdDarkMode>
+
+            <MdLightMode
+              class="swap-on fill-current text-3xl"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ color: "#65C3C8" }}
+            ></MdLightMode>
+          </label>
         </div>
       </div>
     </div>

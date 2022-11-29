@@ -4,10 +4,11 @@ import Cocktail from "./CocktailItem";
 import { useContext } from "react";
 import CocktailContext from "../context/CocktailContext";
 import { ImSpinner10 as Spinner } from "react-icons/im";
-import CocktailList from "./CocktailList";
+import RandomCocktailList from "./RandomCocktailList";
 
 function RandomCocktails() {
-  let { loading, fetchRandomCocktail, cocktails } = useContext(CocktailContext);
+  let { loading, fetchRandomCocktail, randomCocktails } =
+    useContext(CocktailContext);
 
   useEffect(() => {
     fetchRandomCocktail();
@@ -20,9 +21,10 @@ function RandomCocktails() {
     return (
       <div>
         <h3 className="text-primary-focus text-2xl underline mt-16">
-          Some Random Recipes to Get You Started
+          Some Random Recipes
         </h3>
-        <CocktailList cocktails={cocktails} />
+
+        <RandomCocktailList randomCocktails={randomCocktails} />
       </div>
     );
 }
