@@ -2,16 +2,17 @@ import React from "react";
 import RandomCocktails from "../components/RandomCocktails";
 import { useContext } from "react";
 import CocktailContext from "../context/CocktailContext";
-import SearchResults from "../components/SearchResults";
+import SearchResults from "../pages/SearchResults";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   let { cocktail, cocktails, setCocktail, fetchByName } =
     useContext(CocktailContext);
 
-  let handleSubmit = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
 
-    fetchByName(cocktail);
+  let handleSubmit = (e) => {
+    navigate(`/Search/${cocktail}`);
   };
 
   let handleText = (e) => {
@@ -47,10 +48,6 @@ function Home() {
           Search
         </button>
       </form>
-
-      <div className="mx-4 sm:mx-0">
-        <SearchResults cocktails={cocktails} />
-      </div>
 
       <div className="mx-4 sm:mx-0">
         <RandomCocktails />

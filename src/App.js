@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Ingredient from "./pages/Ingredient";
 import Cocktail from "./pages/Cocktail";
+import SearchResults from "./pages/SearchResults";
 import { useContext } from "react";
 import CocktailContext from "./context/CocktailContext";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/Search/:name" element={<SearchResults />} />
             <Route path="/Cocktail/:name" element={<Cocktail />} />
             <Route path="/Ingredient/:ing" element={<Ingredient />} />
           </Routes>

@@ -1,7 +1,17 @@
 import React from "react";
 import CocktailList from "../components/CocktailList";
+import { useContext, useEffect } from "react";
+import CocktailContext from "../context/CocktailContext";
+import { useParams } from "react-router-dom";
 
-function SearchResults({ cocktails }) {
+function SearchResults() {
+  const { loading, fetchByName, cocktails } = useContext(CocktailContext);
+  const params = useParams();
+
+  useEffect(() => {
+    fetchByName(params.name);
+  }, []);
+
   if (cocktails === undefined) {
     <div></div>;
   } else if (cocktails == null) {
@@ -13,7 +23,7 @@ function SearchResults({ cocktails }) {
   } else if (cocktails.length != 0) {
     return (
       <div>
-        <p className="mt-16 text-neutral-content text-2xl mx-1 sm:mx-32 text-left ">
+        <p className="mt-16 text-neutral-content text-xl sm:text-2xl mx-1 sm:mx-32 text-left ">
           We have found{" "}
           <span className="text-primary">{cocktails.length} </span> matches for
           your search:

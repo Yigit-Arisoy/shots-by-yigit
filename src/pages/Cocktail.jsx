@@ -8,11 +8,11 @@ import IngredientBadges from "../components/IngredientBadges";
 import IngredientList from "../components/IngredientList";
 
 function Cocktail() {
-  const { loading, fetchByName, cocktail } = useContext(CocktailContext);
+  const { loading, fetchByNameSingle, cocktail } = useContext(CocktailContext);
   const params = useParams();
 
   useEffect(() => {
-    fetchByName(params.name);
+    fetchByNameSingle(params.name);
   }, []);
 
   console.log(params.name);
@@ -21,7 +21,7 @@ function Cocktail() {
 
   return (
     <div className="mx-auto sm:ml-16 mt-16 grid grid-cols-1 sm:grid-cols-5 justify-items-center sm:justify-items-start">
-      <div className="mx-4 sm:mx-0">
+      <div className="mx-4 sm:mx-16">
         <img
           src={cocktail.strDrinkThumb}
           alt=""

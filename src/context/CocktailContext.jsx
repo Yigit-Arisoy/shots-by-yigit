@@ -71,6 +71,20 @@ export const CocktailProvider = ({ children }) => {
     });
   };
 
+  const fetchByNameSingle = async (name) => {
+    setLoading();
+
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
+    );
+    const data = await response.json();
+
+    dispatch({
+      type: "SET_COCKTAIL",
+      payload: data.drinks[0],
+    });
+  };
+
   const IngredientFetcher = async (ing) => {
     setLoading();
 
@@ -126,6 +140,7 @@ export const CocktailProvider = ({ children }) => {
         IngredientFetcher,
         fetchByIngredient,
         fetchByName,
+        fetchByNameSingle,
         changeMode,
         setNavActive,
         setCocktail,
